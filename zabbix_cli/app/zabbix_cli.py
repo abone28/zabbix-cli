@@ -35,8 +35,8 @@ from zabbix_cli.cli import zabbixcli
 logger = logging.getLogger('zabbix-cli')
 
 
-if __name__ == '__main__':
-
+def main():
+    
     try:
 
         #
@@ -414,3 +414,5 @@ if __name__ == '__main__':
     except Exception as e:
         print('\n[ERROR]:' + str(e) + '\n')
 
+if __name__ == '__main__':
+    main()

@@ -33,7 +33,7 @@ from zabbix_cli.logs import configure_logging
 logger = logging.getLogger('zabbix-cli-bulk-execution')
 
 
-if __name__ == '__main__':
+def main():
 
     parser = argparse.ArgumentParser(prog=sys.argv[0])
     parser.add_argument(
@@ -98,3 +98,7 @@ if __name__ == '__main__':
     if args.input is not sys.stdin:
         args.input.close()
     logger.debug('**** Zabbix-cli-bulk-execution finished. ****')
+
+
+if __name__ == '__main__':
+    main()

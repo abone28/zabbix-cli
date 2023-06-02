@@ -57,8 +57,14 @@ try:
           author='Rafael Martinez Guerrero',
           author_email='rafael@postgresql.org.es',
           url='https://github.com/unioslo/zabbix-cli',
-          packages=['zabbix_cli', ],
-          scripts=['bin/zabbix-cli', 'bin/zabbix-cli-bulk-execution', 'bin/zabbix-cli-init'],
+          packages=['zabbix_cli', 'zabbix_cli.app'],
+          entry_points={
+              "console_scripts" : [
+                  "zabbix-cli = zabbix_cli.app.zabbix_cli:main",
+                  "zabbix-cli-init = zabbix_cli.app.zabbix_cli_init:main",
+                  "zabbix-cli-bulk-execution = zabbix_cli.app.zabbix_cli_bulk_execution:main",
+              ],
+          },
           data_files=data_files,
           install_requires=install_requires,
           platforms=['Linux'],
